@@ -4,10 +4,10 @@ endif
 
 syntax case match
 
+syntax match kittyConfString /.\+$/ contains=@NoSpell
 syntax match kittyConfComment /^#.*/
-syntax match kittyConfIdentifier /^[[:alnum:]_]\+/
-syntax match kittyConfString /[[:alnum:]_\s]\+$/
-syntax match kittyConfColor /#[[:alnum:]]\+$/
+syntax match kittyConfColor /#[[:alnum:]]\+$/ contains=@NoSpell
+syntax match kittyConfIdentifier /^[[:alnum:]_]\+/ contains=@NoSpell
 
 highlight default link kittyConfComment Comment
 highlight default link kittyConfIdentifier Identifier
